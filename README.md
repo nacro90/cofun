@@ -23,7 +23,7 @@ local collect = cofun.collect
 Get passed student grades
 
 ```lua
-grades = {56, 88, 85, 44, 90}
+grades = iter{56, 88, 85, 44, 90}
 
 function can_pass(grade) return grade > 60 end
 
