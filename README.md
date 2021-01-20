@@ -34,7 +34,7 @@ Do not process until an element contains the letter b and then take 5 uppercased
 ```lua
 function contains_b(str) return string.find(str, 'b') end
 
-take(5, map(string.upper, dropwhile(contains_b, iterator)))
+take(5, map(string.upper, dropwhile(negated(contains_b), iterator)))
 ```
 
 You can consume the values using reducing, iterating and collecting.
