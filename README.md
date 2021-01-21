@@ -37,6 +37,24 @@ function contains_b(str) return string.find(str, 'b') end
 take(5, map(string.upper, dropwhile(negated(contains_b), iterator)))
 ```
 
+Zip `n` iterators.
+
+```lua
+letters = iter{'a', 'b', 'c'}
+
+for l, n in zip(letters, count()) do
+  print(l, n) -- 'a', 1 | 'b', 2 | 'c', 3
+end
+
+for l, n in enumerate(letters) do
+  print(l, n) -- 'a', 1 | 'b', 2 | 'c', 3
+end
+
+for l, n, f in zip(letters, count(), count(5)) do
+  print(l, n, f) -- 'a', 1, 5 | 'b', 2, 6 | 'c', 3, 7
+end
+```
+
 You can consume the values using reducing, iterating and collecting.
 
 ### Iterating
@@ -80,9 +98,6 @@ future:
 -- Sum of elements
 sum(iterator)
 ```
-
-
-
 
 ## Installation
 
