@@ -74,10 +74,10 @@ end
 Consume the iterator and collect the iterations in a table.
 
 ```lua
-collect(take(4, count(7)))
+collect(intersperse(':', take(4, count(7))))
 ```
 
-Provides `{7, 8, 9, 10}`
+Produces `{7, ':', 8, ':', 9, ':', 10}`
 
 ### Folding
 
