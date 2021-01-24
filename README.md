@@ -79,24 +79,25 @@ collect(take(4, count(7)))
 
 Provides `{7, 8, 9, 10}`
 
-### Reducing
+### Folding
 
-Reducing reduces the dimension of the iteration to single element using a binary
+Folding reduces the dimension of the iteration to single element using a binary
 function.
 
 ```lua
 -- Concat strings
-reduce(function(left, right) return left .. right end, iterator)
+foldfirst(function(left, right) return left .. right end, iterator)
 -- Find max
-reduce(function(left, right) return left < right and right or left end, iterator)
+foldfirst(function(left, right) return left < right and right or left end, iterator)
 ```
 
 Some reduction shortcuts are implemented too and more can be added in the
 future:
 
 ```lua
--- Sum of elements
 sum(iterator)
+max(iterator)
+min(iterator)
 ```
 
 ## Installation
